@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Cellphones</string>
+    <string name="no_data">Sin registros disponibles</string>
+    <string name="str_img">Imagen cell</string>
+    <string name="str_dialog_button">Aceptar</string>
+</resources>
