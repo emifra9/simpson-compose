@@ -1,4 +1,4 @@
-package com.emifra9.cellphones.ui.main.data.dto
+package com.emifra9.cellphones.data.dto
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

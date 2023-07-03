@@ -1,6 +1,6 @@
-package com.emifra9.cellphones.ui.main.data.network
+package com.emifra9.cellphones.data.network
 
-import com.emifra9.cellphones.ui.main.data.dto.Mobile
+import com.emifra9.cellphones.data.dto.Mobile
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

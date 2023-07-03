@@ -1,4 +1,4 @@
-package com.emifra9.cellphones.ui.main
+package com.emifra9.cellphones.view.main
 
 import android.os.Build
 import android.os.Bundle
@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.emifra9.cellphones.viewmodel.MainViewModel
 import com.emifra9.cellphones.databinding.BottomSheetDialogBinding
+import com.emifra9.cellphones.view.main.adapters.ImageAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -41,7 +43,7 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
 
         viewModel.getMobile(id)
 
-        viewModel.mobileLiveData.observe(viewLifecycleOwner, {
+        viewModel.mobileLiveData.observe(viewLifecycleOwner) {
             binding.nameMobile.text = it.name
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 binding.legal.text = Html.fromHtml(it.legal, Html.FROM_HTML_MODE_COMPACT)
@@ -50,7 +52,7 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
                 LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
             binding.rvImage.adapter = ImageAdapter(requireContext(), it.images)
 
-        })
+        }
         binding.idBtnDismiss.setOnClickListener { dialog!!.dismiss() }
 
 

@@ -1,4 +1,4 @@
-package com.emifra9.cellphones.ui.main
+package com.emifra9.cellphones.view.main.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.emifra9.cellphones.R
 import com.emifra9.cellphones.databinding.ItemMobileBinding
-import com.emifra9.cellphones.ui.main.data.dto.Mobile
+import com.emifra9.cellphones.data.dto.Mobile
 
 
 class MobileAdapter : RecyclerView.Adapter<MobileAdapter.MainViewHolder>() {
 
-    var mobiles = mutableListOf<Mobile>()
+    private var mobiles = mutableListOf<Mobile>()
 
     private lateinit var onClickMobile: OnMobileClicked
 

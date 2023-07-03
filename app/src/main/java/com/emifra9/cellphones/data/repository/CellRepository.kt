@@ -1,8 +1,8 @@
-package com.emifra9.cellphones.ui.main.data.repository
+package com.emifra9.cellphones.data.repository
 
-import com.emifra9.cellphones.ui.main.data.dto.Mobile
-import com.emifra9.cellphones.ui.main.data.network.ICellService
-import com.emifra9.cellphones.ui.main.utils.Resource
+import com.emifra9.cellphones.data.dto.Mobile
+import com.emifra9.cellphones.data.network.ICellService
+import com.emifra9.cellphones.utils.Resource
 import javax.inject.Inject
 import javax.inject.Singleton
 

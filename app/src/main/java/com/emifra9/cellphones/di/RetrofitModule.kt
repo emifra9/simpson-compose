@@ -1,11 +1,11 @@
-package com.emifra9.cellphones.ui.main.di
+package com.emifra9.cellphones.di
 
 
 import com.emifra9.cellphones.BuildConfig
-import com.emifra9.cellphones.ui.main.data.domain.usecase.GetMobileUseCase
-import com.emifra9.cellphones.ui.main.data.domain.usecase.GetMobilesUseCase
-import com.emifra9.cellphones.ui.main.data.network.ICellService
-import com.emifra9.cellphones.ui.main.data.repository.ICellRepository
+import com.emifra9.cellphones.data.domain.usecase.GetMobileUseCase
+import com.emifra9.cellphones.data.domain.usecase.GetMobilesUseCase
+import com.emifra9.cellphones.data.network.ICellService
+import com.emifra9.cellphones.data.repository.ICellRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

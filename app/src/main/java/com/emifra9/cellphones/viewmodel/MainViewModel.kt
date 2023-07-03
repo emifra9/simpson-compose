@@ -1,14 +1,12 @@
-package com.emifra9.cellphones.ui.main
+package com.emifra9.cellphones.viewmodel
 
 import android.util.Log
-import androidx.databinding.ObservableBoolean
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.emifra9.cellphones.ui.main.data.domain.usecase.GetMobileUseCase
-import com.emifra9.cellphones.ui.main.data.domain.usecase.GetMobilesUseCase
-import com.emifra9.cellphones.ui.main.data.dto.Mobile
-import com.emifra9.cellphones.ui.main.utils.Status
+import com.emifra9.cellphones.data.domain.usecase.GetMobileUseCase
+import com.emifra9.cellphones.data.domain.usecase.GetMobilesUseCase
+import com.emifra9.cellphones.data.dto.Mobile
+import com.emifra9.cellphones.utils.Status
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -54,26 +52,18 @@ class MainViewModel @Inject constructor(
     }
 
      fun getMobile(id: Int) {
-         Log.e("mainvm" , "getMobile" + id)
         coroutineScope.launch {
             val result = getMobileUseCase(id)
             when (result.status) {
                 Status.ERROR -> {
-
-                    Log.e("mainvm" ,"ERROR")
                     hideLoading()
                 }
                 Status.SUCCESS -> {
                     val mobile = result.data
-
-                    Log.e("mainvm" ,"SUCCESS")
-                    Log.e("mainvm" , mobile.toString())
                     mobileLiveData.postValue(mobile!!)
                     hideLoading()
                 }
                 Status.LOADING -> {
-
-                    Log.e("mainvm" ,"LOADING")
                     showLoading()
                 }
             }

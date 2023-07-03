@@ -1,4 +1,4 @@
-package com.emifra9.cellphones.ui.main.utils
+package com.emifra9.cellphones.utils
 
 enum class Status {
     SUCCESS,

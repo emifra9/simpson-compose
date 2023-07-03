@@ -1,4 +1,4 @@
-package com.emifra9.cellphones.ui.main.data.network
+package com.emifra9.cellphones.data.network
 
 object CellConstants {
     const val pathGetMobiles: String = "devices"

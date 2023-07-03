@@ -1,4 +1,4 @@
-package com.emifra9.cellphones.ui.main
+package com.emifra9.cellphones.view.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,8 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import com.emifra9.cellphones.viewmodel.MainViewModel
+import com.emifra9.cellphones.view.main.adapters.MobileAdapter
 import com.emifra9.cellphones.databinding.MainFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -46,19 +48,19 @@ class MainFragment : Fragment(), MobileAdapter.OnMobileClicked {
         binding.recyclerview.layoutManager = GridLayoutManager(context,2)
         binding.recyclerview.adapter = adapter
         adapter.setOnClickMobile(this)
-        viewModel.mobilesLiveData.observe(viewLifecycleOwner, {
-            if (it.count() > 0) {
+        viewModel.mobilesLiveData.observe(viewLifecycleOwner) {
+            if (it.isNotEmpty()) {
                 binding.noData.visibility = GONE
                 adapter.setMobilesList(it)
                 binding.recyclerview.visibility = VISIBLE
             }
-        })
-        viewModel.isLoading.observe(viewLifecycleOwner, {
+        }
+        viewModel.isLoading.observe(viewLifecycleOwner) {
             if (it)
-               binding.progressHorizontal.visibility = VISIBLE
+                binding.progressHorizontal.visibility = VISIBLE
             else
                 binding.progressHorizontal.visibility = GONE
-        })
+        }
 
 
     }
@@ -67,7 +69,7 @@ class MainFragment : Fragment(), MobileAdapter.OnMobileClicked {
         val bundle = Bundle()
         bundle.putInt("id", position)
         val modalBottomSheet = ModalBottomSheet()
-        modalBottomSheet.arguments = bundle;
+        modalBottomSheet.arguments = bundle
         modalBottomSheet.show(childFragmentManager, ModalBottomSheet.TAG)
     }
 
