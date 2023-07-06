@@ -26,14 +26,14 @@ The following libraries and dependencies were used in the development of this ap
 
 To build and run the app locally, follow these steps:
 
-1. Clone this repository: `git clone [[repository URL]](https://github.com/emifra9/simpson-compose.git)`
+1. Clone this repository: `git clone https://github.com/emifra9/simpson-compose.git`
 2. Open the project in Android Studio.
 3. Build the project.
 4. Run the app on an emulator or a physical device.
 
 ## Snapshots
 
-<img src="app/snapshots/grid.png" alt="Snapshot 1" width="150">
-<img src="app/snapshots/modal.png" alt="Snapshot 1" width="150">
+<img src="app/snapshots/grid.png" alt="Snapshot 1" width="200">
+<img src="app/snapshots/modal.png" alt="Snapshot 1" width="200">
 
 
