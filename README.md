@@ -33,8 +33,7 @@ To build and run the app locally, follow these steps:
 
 ## Snapshots
 
-![Snapshot 1](snapshots/grid.png)
+<img src="app/snapshots/grid.png" alt="Snapshot 1" width="150">
+<img src="app/snapshots/modal.png" alt="Snapshot 1" width="150">
 
-
-![Snapshot 2](snapshots/modal.png)
 
